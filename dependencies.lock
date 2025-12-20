@@ -1,6 +1,6 @@
 dependencies:
   espressif/esp_lcd_touch:
-    component_hash: 779b4ba2464a3ae85681e4b860caa5fdc35801458c23f3039ee761bae7f442a4
+    component_hash: 3f85a7d95af876f1a6ecca8eb90a81614890d0f03a038390804e5a77e2caf862
     dependencies:
     - name: idf
       require: private
@@ -8,27 +8,27 @@ dependencies:
     source:
       registry_url: https://components.espressif.com
       type: service
-    version: 1.1.2
+    version: 1.2.1
   espressif/esp_lcd_touch_gt911:
-    component_hash: f90c3f82f052d1ccdfd71895a062f396ccc1c90ec69d8a99c483180387230bac
+    component_hash: be02e243d18b9a661bc13b0d22c0a5cfa3f708cf04d6eb059772276c8c8a4d76
     dependencies:
-    - name: idf
-      require: private
-      version: '>=4.4.2'
     - name: espressif/esp_lcd_touch
       registry_url: https://components.espressif.com
       require: public
-      version: ^1.1.0
+      version: ^1.2.0
+    - name: idf
+      require: private
+      version: '>=4.4.2'
     source:
       registry_url: https://components.espressif.com/
       type: service
-    version: 1.1.1~1
+    version: 1.2.0~1
   espressif/esp_lvgl_port:
-    component_hash: e720c95cf0667554a204591bb5fade4655fb2990465557041200fa44b5bc7556
+    component_hash: f872401524cb645ee6ff1c9242d44fb4ddcfd4d37d7be8b9ed3f4e85a404efcd
     dependencies:
     - name: idf
       require: private
-      version: '>=4.4'
+      version: '>=5.1'
     - name: lvgl/lvgl
       registry_url: https://components.espressif.com
       require: public
@@ -36,18 +36,18 @@ dependencies:
     source:
       registry_url: https://components.espressif.com/
       type: service
-    version: 2.6.0
+    version: 2.7.0
   idf:
     source:
       type: idf
-    version: 5.4.1
+    version: 6.0.0
   lvgl/lvgl:
-    component_hash: 096c69af22eaf8a2b721e3913da91918c5e6bf1a762a113ec01f401aa61337a0
+    component_hash: 17e68bfd21f0edf4c3ee838e2273da840bf3930e5dbc3bfa6c1190c3aed41f9f
     dependencies: []
     source:
       registry_url: https://components.espressif.com/
       type: service
-    version: 9.2.2
+    version: 9.4.0
 direct_dependencies:
 - espressif/esp_lcd_touch_gt911
 - espressif/esp_lvgl_port

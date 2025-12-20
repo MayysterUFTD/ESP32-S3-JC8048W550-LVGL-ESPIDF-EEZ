@@ -15,9 +15,7 @@ extern "C" {
 // Flow global variables
 
 enum FlowGlobalVariables {
-    FLOW_GLOBAL_VARIABLE_AFR_CURRENT = 0,
-    FLOW_GLOBAL_VARIABLE_AFR_SET = 1,
-    FLOW_GLOBAL_VARIABLE_CHART_VALUE = 2
+    FLOW_GLOBAL_VARIABLE_NONE
 };
 
 // Native global variables
