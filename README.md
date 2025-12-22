@@ -1,24 +1,50 @@
-# ESP32-8048S050C
+# ESP32-S3 8048S050C (Sunton) — LVGL demo
 
-**Implementation with FreeRTOS OSAL and LVGL 9.2**
+Implementation for the Sunton 800×480 capacitive display using ESP32-S3, LVGL 9.x and FreeRTOS.
 
-Sunton ESP32-S3 800x480 Capacitive touch display
+Key points:
+- Target: ESP32-S3 (RGB LCD + GT911 touch controller support).
+- Uses LVGL for UI, EEZ framework for app structure, and esp_lcd_touch_gt911 for touch.
+- `sdkconfig.defaults` enables SPIRAM and configures LVGL memory (128 KB). Review and regenerate `sdkconfig` if you change memory settings.
 
-Example using esp-idf 5.2 and the esp_lcd_touch_gt911 and lvgl components.
+Requirements
+ - ESP-IDF 5.2 (or compatible 5.x release)
+ - Python (ESP-IDF tooling)
+ - A configured ESP-IDF environment with `idf.py` on PATH
 
-In gt911_touch_init, a callback is registered to map the measured touch coordinates to display coordinates, see header file for information.
+Quick build & run
+1. Set IDF target:
 
-* Set esp-idf target to ESP32S3, other versions might lack rgb panel support.
-* The supplied sdkconfig.defaults configures SPIRAM, regenerate your sdkconfig if needed.
+  idf.py set-target esp32s3
 
-idf.py set-target esp32s3 idf.py build flash monitor
+2. Build the project:
 
-## Branches
+  idf.py build
 
-* [Main](../../tree/main)
-  * LVGL 9.2.0
-  * LVGL requires 128kb RAM for demo widgets
-  * can use OSAL via `CONFIG_LV_OS_FREERTOS`
-  * can use double-FB and direct rendering
+3. Flash (replace `COMx` and `115200` as appropriate):
 
-* [Test](../../tree/lvgl-test) - test branch
+  idf.py -p COMx -b 115200 flash
+
+4. Monitor serial output:
+
+  idf.py -p COMx monitor
+
+Notes
+- LVGL: The project expects at least 128 KB LVGL heap for demo widgets (`CONFIG_LV_MEM_SIZE_KILOBYTES=128` in `sdkconfig.defaults`).
+- SPIRAM: The supplied `sdkconfig.defaults` enables PSRAM; keep this if you rely on framebuffer in PSRAM.
+- Touch: GT911 initialization maps touch coordinates to display coordinates. See `main/sunton_esp32_8048s050c.h` for mapping details.
+
+Project layout (important files)
+- `main/main.cpp` — application entry and initialization
+- `main/sunton_esp32_8048s050c.c/.h` — hardware init (LCD, backlight, touch, I2C)
+- `main/ui/` — LVGL UI sources, images and fonts
+- `main/eez-framework/` — included EEZ framework sources used by the UI
+- `CMakeLists.txt` / `sdkconfig.defaults` — build and default configuration
+
+Tips
+- If you change memory or PSRAM settings, run `idf.py reconfigure` (or delete `sdkconfig` and rebuild) to regenerate a config.
+- Ensure the IDF target is `esp32s3` before building: `idf.py set-target esp32s3`.
+
+## License
+
+Check for a `LICENSE` file in the repository. If none is present, assume no license is provided by default.
