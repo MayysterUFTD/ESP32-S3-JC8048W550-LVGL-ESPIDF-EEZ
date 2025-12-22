@@ -12,7 +12,7 @@ Key points:
 This project is based on and adapted from https://github.com/mr-sven/esp32-8048S050C. Please check the upstream repository for additional context, contributions, and historical changes.
 
 Requirements
- - ESP-IDF 5.2 (or compatible 5.x release)
+ - ESP-IDF 6.0 (or compatible 5.x release)
  - Python (ESP-IDF tooling)
  - A configured ESP-IDF environment with `idf.py` on PATH
 
