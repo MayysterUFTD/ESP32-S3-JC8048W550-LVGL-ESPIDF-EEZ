@@ -7,6 +7,10 @@ Key points:
 - Uses LVGL for UI, EEZ framework for app structure, and esp_lcd_touch_gt911 for touch.
 - `sdkconfig.defaults` enables SPIRAM and configures LVGL memory (128 KB). Review and regenerate `sdkconfig` if you change memory settings.
 
+## Upstream & Credits
+
+This project is based on and adapted from https://github.com/mr-sven/esp32-8048S050C. Please check the upstream repository for additional context, contributions, and historical changes.
+
 Requirements
  - ESP-IDF 5.2 (or compatible 5.x release)
  - Python (ESP-IDF tooling)
