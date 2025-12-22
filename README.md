@@ -8,7 +8,7 @@ Key points:
 - `sdkconfig.defaults` enables SPIRAM and configures LVGL memory (128 KB). Review and regenerate `sdkconfig` if you change memory settings.
 
 Requirements
- - ESP-IDF 5.2 (or compatible 5.x release)
+ - ESP-IDF 6.0 (or compatible 5.x release)
  - Python (ESP-IDF tooling)
  - A configured ESP-IDF environment with `idf.py` on PATH
 
