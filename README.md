@@ -1,4 +1,4 @@
-# ESP32-S3 8048S050C (Sunton) — LVGL demo
+# ESP32-S3 JC8048W550 (Sunton) — LVGL demo
 
 Implementation for the Sunton 800×480 capacitive display using ESP32-S3, LVGL 9.x and FreeRTOS.
 
